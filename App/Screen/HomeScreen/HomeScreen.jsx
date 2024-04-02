@@ -13,7 +13,7 @@ export default function HomeScreen() {
                 <View style={styles.firstGrid}>
                     <View style={styles.goodMarker}>
                         <Image style={styles.firstGridImage} source={require("../../../assets/images/good1.png")} />
-                    </View> 
+                    </View>
                     <Text style={styles.firstGridTaskName}>App Branding Redesign</Text>
                     <View style={styles.firstGridSubTaskSection}>
                         <Image style={styles.firstGridTaskListImage} source={require("../../../assets/images/task-list-icon.png")} />
@@ -24,26 +24,26 @@ export default function HomeScreen() {
 
                 {/* second div */}
                 <View style={styles.completedTaskSection}>
-                <View >
-                    <View>
-                        <Image style={styles.clockImage} source={require("../../../assets/images/clock.png")} />
-                    </View>
                     <View >
-                        <Text style={styles.completedTaskNumber}>15</Text>
-                        <Text style={styles.completedTaskText}>Completed</Text>
+                        <View>
+                            <Image style={styles.clockImage} source={require("../../../assets/images/clock.png")} />
+                        </View>
+                        <View >
+                            <Text style={styles.completedTaskNumber}>15</Text>
+                            <Text style={styles.completedTaskText}>Completed</Text>
+                        </View>
                     </View>
-                </View>
 
-                <View style={styles.availableTaskSection}>
-                    <View >
-                        <Text style={styles.availableTaskNumber}>15</Text>
-                        <Text style={styles.availableTaskText}>Available</Text>
+                    <View style={styles.availableTaskSection}>
+                        <View >
+                            <Text style={styles.availableTaskNumber}>15</Text>
+                            <Text style={styles.availableTaskText}>Available</Text>
+                        </View>
                     </View>
-                </View>
                 </View>
                 {/* second div ends */}
             </View>
-        
+
         </View>
     )
 }
@@ -57,7 +57,7 @@ const styles = StyleSheet.create({
     manageDailyTask: {
         fontSize: 35,
         width: "60%",
-        fontFamily:"outfit-medium",
+        fontFamily: "outfit-medium",
     },
     overview: {
         display: "flex",
@@ -82,7 +82,7 @@ const styles = StyleSheet.create({
     firstGridImage: {
         objectFit: "contain",
         width: 60,
-        height:60,
+        height: 60,
     },
     firstGridTaskName: {
         marginTop: 20,
@@ -90,7 +90,7 @@ const styles = StyleSheet.create({
         fontFamily: "outfit-medium",
         fontSize: 23,
     },
-    firstGridSubTaskSection:{
+    firstGridSubTaskSection: {
         display: "flex",
         flexDirection: "row",
         alignItems: "center",
@@ -98,7 +98,7 @@ const styles = StyleSheet.create({
     firstGridTaskListImage: {
         objectFit: "contain",
         width: 15,
-        height:15,
+        height: 15,
     },
     numberOfCompletedSubTasks: {
         color: Colors.WHITE,
@@ -115,7 +115,7 @@ const styles = StyleSheet.create({
     clockImage: {
         objectFit: "contain",
         width: 60,
-        height:60,
+        height: 60,
         position: "absolute",
         right: -5,
         top: -40
