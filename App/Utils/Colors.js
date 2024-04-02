@@ -1,5 +1,5 @@
-export default{
-    PRIMARY : "#0BC224",
+export default {
+    PRIMARY: "#0BC224",
     GRAY: "#898989",
     WHITE: "#ffffff",
     BLACK: "#000000",
@@ -7,5 +7,7 @@ export default{
     PURPLE: "#B34BFF",
     YELLOW: "#FEB227",
     BLUE: "#65ACFF",
-    PINK: "#FB007F"
+    PINK: "#FB007F",
+    BLACKISH: "#232b2b",
+    GREENISH:"#219ebc"
 }

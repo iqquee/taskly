@@ -6,5 +6,5 @@ export default function TabNavigation() {
         <View>
             <Text>TabNavigation</Text>
         </View>
-)
+    )
 }
