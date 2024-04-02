@@ -166,7 +166,7 @@ export default function HomeScreen() {
                             borderRadius: 20,
                             padding: 10,
                         }}>
-                            <Image source={require("../../../assets/images/good1.png")}
+                            <Image source={require("../../../assets/images/active-task.png")}
                                 style={{
                                     objectFit: "contain",
                                     width: 60,
@@ -181,7 +181,7 @@ export default function HomeScreen() {
                         fontFamily: "outfit-medium",
                         fontSize: 23,
                     }}>
-                        App Branding Redesign
+                        Upcoming Task
                     </Text>
                     <View style={{
                         display: "flex",
