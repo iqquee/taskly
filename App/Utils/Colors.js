@@ -7,5 +7,7 @@ export default {
     PURPLE: "#B34BFF",
     YELLOW: "#FEB227",
     BLUE: "#65ACFF",
-    PINK: "#FB007F"
+    PINK: "#FB007F",
+    BLACKISH: "#232b2b",
+    GREENISH:"#219ebc"
 }
