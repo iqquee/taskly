@@ -6,7 +6,7 @@ import NavigationBar from "../../Component/NavigationBar"
 export default function HomeScreen() {
     return (
         <View>
-            <ScrollView showsVerticalScrollIndicator={false}>
+            <ScrollView style={{ padding: 10, }} showsVerticalScrollIndicator={false}>
                 <Text style={styles.welcomeBack}>Welcome Back!!!</Text>
                 <Text style={styles.manageDailyTask}>Manage Your Daily Task</Text>
 
@@ -121,7 +121,7 @@ export default function HomeScreen() {
                     </View>
                 </View>
                 
-                <View style={{marginVertical:30}}></View>
+                <View style={{marginVertical:35}}></View>
                 {/* task list ends*/}
             </ScrollView>
             <NavigationBar />

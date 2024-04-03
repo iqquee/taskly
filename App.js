@@ -28,7 +28,7 @@ export default function App() {
   return (
     <View onLayout={onLayoutRootView}>
       <StatusBar style="auto" />
-      <SafeAreaView style={{ padding: 10, }}>
+      <SafeAreaView>
         <HomeScreen />
       </SafeAreaView>
     </View>
