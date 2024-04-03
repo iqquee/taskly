@@ -6,7 +6,7 @@ import React, { useState } from "react";
 export default function CreateTask() {
     const [isDateTimePickerVisible, setDateTimePickerVisibility] = useState(false);
     const [dateTimeValue, setDateTimeValue] = useState("")
-    
+
     const showDatePicker = () => {
         setDateTimePickerVisibility(true);
     };
@@ -42,7 +42,7 @@ export default function CreateTask() {
                             <Image style={styles.calenderImage} source={require("../assets/images/calender.png")} />
                         </TouchableOpacity>
                     </View>
-                    
+
                     <DateTimePickerModal
                         isVisible={isDateTimePickerVisible}
                         mode="datetime"
@@ -54,11 +54,11 @@ export default function CreateTask() {
 
                 <View>
                     <Text style={[styles.taskDescription, styles.taskName]}>Description</Text>
-                    <KeyboardAvoidingView
+                    {/* <KeyboardAvoidingView
                         behavior={Platform.OS === "ios" ? "padding" : "height"}
-                        style={styles.writeTaskWrapper} >
-                        <TextInput multiline={true} style={styles.input} placeholder={"input your task name"} />
-                    </KeyboardAvoidingView>
+                        style={styles.writeTaskWrapper} > */}
+                    <TextInput multiline={true} style={styles.input} placeholder={"input your task name"} />
+                    {/* </KeyboardAvoidingView> */}
                 </View>
             </View>
         </View>
@@ -76,7 +76,8 @@ const styles = StyleSheet.create({
     },
     taskName: {
         fontFamily: "outfit",
-        fontSize: 20
+        fontSize: 20,
+        color: Colors.BLACKISH
     },
     input: {
         marginTop: 5,
