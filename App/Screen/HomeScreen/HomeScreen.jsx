@@ -1,10 +1,10 @@
-import { View, Text, StyleSheet, Image } from 'react-native'
+import { ScrollView, View, Text, StyleSheet, Image } from 'react-native'
 import React from 'react'
 import Colors from '../../Utils/Colors';
 
 export default function HomeScreen() {
     return (
-        <View>
+        <ScrollView showsVerticalScrollIndicator={false}>
             <Text style={styles.welcomeBack}>Welcome Back!!!</Text>
             <Text style={styles.manageDailyTask}>Manage Your Daily Task</Text>
 
@@ -63,12 +63,12 @@ export default function HomeScreen() {
 
                     <Text style={styles.taskTitle}>Salon App Wireframe</Text>
                     <View style={styles.taskTimeSection}>
-                        <Image style={styles.taskClockImage} source={require("../../../assets/images/time.png")} />
+                        <Image style={styles.taskClockImage} source={require("../../../assets/images/time1.png")} />
                         <Text style={styles.taskClockTime}>10:45 AM</Text>
                     </View>
 
                     <View style={styles.taskDateSection}>
-                    <Image style={styles.taskCalander} source={require("../../../assets/images/calender.png")} />
+                        <Image style={styles.taskCalander} source={require("../../../assets/images/calender.png")} />
                         <Text style={styles.taskDueDate}>Monday, April 8</Text>
                     </View>
                 </View>
@@ -84,12 +84,12 @@ export default function HomeScreen() {
 
                     <Text style={styles.taskTitle}>Build a task management app</Text>
                     <View style={styles.taskTimeSection}>
-                        <Image style={styles.taskClockImage} source={require("../../../assets/images/time.png")} />
+                        <Image style={styles.taskClockImage} source={require("../../../assets/images/time1.png")} />
                         <Text style={styles.taskClockTime}>10:45 AM</Text>
                     </View>
 
                     <View style={styles.taskDateSection}>
-                    <Image style={styles.taskCalander} source={require("../../../assets/images/calender.png")} />
+                        <Image style={styles.taskCalander} source={require("../../../assets/images/calender.png")} />
                         <Text style={styles.taskDueDate}>Monday, April 8</Text>
                     </View>
                 </View>
@@ -105,18 +105,18 @@ export default function HomeScreen() {
 
                     <Text style={styles.taskTitle}>Graphics design for client</Text>
                     <View style={styles.taskTimeSection}>
-                        <Image style={styles.taskClockImage} source={require("../../../assets/images/time.png")} />
+                        <Image style={styles.taskClockImage} source={require("../../../assets/images/time1.png")} />
                         <Text style={styles.taskClockTime}>10:45 AM</Text>
                     </View>
 
                     <View style={styles.taskDateSection}>
-                    <Image style={styles.taskCalander} source={require("../../../assets/images/calender.png")} />
+                        <Image style={styles.taskCalander} source={require("../../../assets/images/calender.png")} />
                         <Text style={styles.taskDueDate}>Monday, April 8</Text>
                     </View>
                 </View>
             </View>
             {/* task list ends*/}
-        </View>
+        </ScrollView>
     )
 }
 
@@ -141,7 +141,7 @@ const styles = StyleSheet.create({
     },
     firstGrid: {
         backgroundColor: Colors.PURPLE,
-        width: "48.5%",
+        width: "48%",
         padding: 15,
         borderRadius: 20,
         justifyContent: "center",
@@ -180,7 +180,7 @@ const styles = StyleSheet.create({
         fontSize: 14,
     },
     secondGrid: {
-        width: "48.5%",
+        width: "48%",
     },
     completedTaskSection: {
         backgroundColor: Colors.YELLOW,
@@ -205,7 +205,7 @@ const styles = StyleSheet.create({
     },
     completedTaskText: {
         color: Colors.WHITE,
-        fontFamily: "outfit-medium",
+        fontFamily: "outfit-bold",
         position: "absolute",
         bottom: 10,
         left: 40,
@@ -226,7 +226,7 @@ const styles = StyleSheet.create({
     },
     availableTaskText: {
         color: Colors.WHITE,
-        fontFamily: "outfit-medium",
+        fontFamily: "outfit-bold",
         position: "absolute",
         bottom: 10,
         left: 40,
@@ -296,15 +296,16 @@ const styles = StyleSheet.create({
     },
     taskClockImage: {
         objectFit: "contain",
-        width: 15,
-        height: 15,
+        width: 20,
+        height: 20,
         alignSelf: "center"
     },
     taskClockTime: {
         color: Colors.WHITE,
         marginLeft: 3,
         fontSize: 15,
-        fontFamily: "outfit"
+        fontFamily: "outfit",
+        alignSelf: "center"
     },
     taskDateSection: {
         display: "flex",
@@ -313,14 +314,15 @@ const styles = StyleSheet.create({
     },
     taskCalander: {
         objectFit: "contain",
-        width: 15,
-        height: 15,
+        width: 20,
+        height: 20,
         alignSelf: "center"
     },
     taskDueDate: {
         color: Colors.WHITE,
         marginLeft: 3,
         fontSize: 15,
-        fontFamily: "outfit"
+        fontFamily: "outfit",
+        alignSelf: "center"
     }
 })
