@@ -1,6 +1,6 @@
 import { useCallback } from 'react';
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { View } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import HomeScreen from "./App/Screen/HomeScreen/HomeScreen"
 import { useFonts } from 'expo-font';
@@ -28,7 +28,7 @@ export default function App() {
   return (
     <View onLayout={onLayoutRootView}>
       <StatusBar style="auto" />
-      <SafeAreaView style={{ padding: 10, }}>
+      <SafeAreaView>
         <HomeScreen />
       </SafeAreaView>
     </View>
