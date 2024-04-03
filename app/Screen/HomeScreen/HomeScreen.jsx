@@ -2,6 +2,7 @@ import { ScrollView, View, Text, StyleSheet, Image, TouchableOpacity } from 'rea
 import React from 'react'
 import Colors from '../../Utils/Colors';
 import NavigationBar from "../../Component/NavigationBar"
+import { Link } from 'expo-router';
 
 export default function HomeScreen() {
     return (
@@ -49,7 +50,7 @@ export default function HomeScreen() {
                 <View style={styles.ongoingSection}>
                     <Text style={styles.ongoingText}>Ongoing</Text>
                     <TouchableOpacity style={{ alignSelf: "center" }}>
-                        <Text style={styles.seeAllText}>See all</Text>
+                        <Link href="/createtask" style={styles.seeAllText}>See all</Link>
                     </TouchableOpacity>
 
                 </View>
@@ -161,7 +162,6 @@ const styles = StyleSheet.create({
         backgroundColor: Colors.WHITE,
         borderRadius: 20,
         padding: 10,
-        opacity: 0,
     },
     firstGridImage: {
         objectFit: "contain",
