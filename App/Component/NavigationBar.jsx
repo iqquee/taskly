@@ -5,26 +5,30 @@ import Colors from '../Utils/Colors'
 export default function NavigationBar() {
     return (
         <View style={styles.wrapper}>
-            <Image style={styles.homeImage} source={require("../../assets/images/home.png")} />
-            <View style={styles.newTaskSection}>
-                <TouchableOpacity>
+            <TouchableOpacity activeOpacity={1} style={{ justifyContent: "center" }}>
+                <Image style={styles.homeImage} source={require("../../assets/images/blue-home-circle.png")} />
+            </TouchableOpacity>
+            <TouchableOpacity activeOpacity={1} style={{ justifyContent: "center" }}>
+                <View style={styles.newTaskSection}>
                     <Image style={styles.newTaskImage} source={require("../../assets/images/plus.png")} />
-                </TouchableOpacity>
-            </View>
-            <Image style={styles.viewTasksImage} source={require("../../assets/images/task.png")} />
+                </View>
+            </TouchableOpacity>
+            <TouchableOpacity activeOpacity={1} style={{ justifyContent: "center" }}>
+                <Image style={styles.viewTasksImage} source={require("../../assets/images/blue-task-list.png")} />
+            </TouchableOpacity>
         </View>
     )
 }
 
 const styles = StyleSheet.create({
     wrapper: {
-        backgroundColor: Colors.PURPLE,
-        borderTopLeftRadius: 10,
-        borderTopRightRadius: 10,
+        backgroundColor: Colors.BLACKISH,
+        borderTopLeftRadius: 20,
+        borderTopRightRadius: 20,
         width: "100%",
         height: 30,
         paddingVertical: 30,
-        paddingHorizontal: 10,
+        paddingHorizontal: 20,
         position: "absolute",
         display: "flex",
         flexDirection: "row",
@@ -33,26 +37,28 @@ const styles = StyleSheet.create({
     },
     homeImage: {
         objectFit: "contain",
-        width: 30,
-        alignSelf:"center"
+        width: 50,
+        alignSelf: "center"
     },
     newTaskSection: {
-        backgroundColor: Colors.WHITE,
+        backgroundColor: Colors.BLUE,
         borderRadius: 50,
-        width: 50,
-        height: 50,
+        width: 70,
+        height: 70,
         alignSelf: "center",
         justifyContent: "center",
         alignItems: "center",
-        marginTop: -15
+        marginTop: -30,
+        borderColor: Colors.WHITE,
+        borderWidth: 5,
     },
     newTaskImage: {
         objectFit: "contain",
-        width: 15,
+        width: 17,
     },
     viewTasksImage: {
         objectFit: "contain",
-        width: 30,
-        alignSelf:"center",
+        width: 40,
+        alignSelf: "center",
     }
 })
