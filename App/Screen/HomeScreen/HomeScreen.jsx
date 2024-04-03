@@ -141,7 +141,7 @@ const styles = StyleSheet.create({
     },
     firstGrid: {
         backgroundColor: Colors.PURPLE,
-        width: "48%",
+        width: "48.5%",
         padding: 15,
         borderRadius: 20,
         justifyContent: "center",
@@ -180,7 +180,7 @@ const styles = StyleSheet.create({
         fontSize: 14,
     },
     secondGrid: {
-        width: "48%",
+        width: "48.5%",
     },
     completedTaskSection: {
         backgroundColor: Colors.YELLOW,
@@ -275,7 +275,8 @@ const styles = StyleSheet.create({
     taskPercentage: {
         color: Colors.WHITE,
         fontFamily: "outfit",
-        alignSelf: "center"
+        alignSelf: "center",
+        fontSize: 18
     },
     percentage: {
         color: Colors.WHITE,
