@@ -44,13 +44,12 @@ export default function HomeScreen() {
                     </View>
                     {/* second div ends */}
                 </View>
-                {/* <View style={{ backgroundColor: Colors.PINK, width: "100%", height: 10 }}></View> */}
 
                 {/* ongoing div*/}
                 <View style={styles.ongoingSection}>
                     <Text style={styles.ongoingText}>Ongoing</Text>
                     <TouchableOpacity style={{ alignSelf: "center" }}>
-                        <Link href="/createtask" style={styles.seeAllText}>See all</Link>
+                        <Link href="/createtask" style={styles.viewAllText}>View all</Link>
                     </TouchableOpacity>
 
                 </View>
@@ -253,7 +252,7 @@ const styles = StyleSheet.create({
         color: Colors.BLACKISH,
         fontFamily: "outfit-medium",
     },
-    seeAllText: {
+    viewAllText: {
         color: Colors.PURPLE,
         fontSize: 18,
         fontFamily: "outfit",
