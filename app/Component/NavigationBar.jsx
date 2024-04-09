@@ -8,15 +8,16 @@ export default function NavigationBar() {
     return (
         <View style={styles.wrapper}>
             <TouchableOpacity activeOpacity={1} style={{ justifyContent: "center" }}>
-                <Image style={styles.homeImage} source={require("../../assets/images/blue-home-circle.png")} />
+                {/* <Image style={styles.homeImage} source={require("../../assets/images/blue-home-circle.png")} /> */}
             </TouchableOpacity>
             <TouchableOpacity activeOpacity={1} style={{ justifyContent: "center" }} >
                 <View style={styles.newTaskSection}>
-                    <Image style={styles.newTaskImage} source={require("../../assets/images/plus.png")} />
+                    <Text style={styles.newTaskImage}>+</Text>
                 </View>
             </TouchableOpacity>
             <TouchableOpacity activeOpacity={1} style={{ justifyContent: "center" }}>
-                <Image style={styles.viewTasksImage} source={require("../../assets/images/blue-task-list.png")} />
+                {/* <Image style={styles.viewTasksImage} source={require("../../assets/images/blue-task-list.png")} /> */}
+                <Text></Text>
             </TouchableOpacity>
         </View>
     )
@@ -24,7 +25,7 @@ export default function NavigationBar() {
 
 const styles = StyleSheet.create({
     wrapper: {
-        backgroundColor: Colors.BLACKISH,
+        backgroundColor: Colors.PURPLE,
         borderTopLeftRadius: 20,
         borderTopRightRadius: 20,
         width: "100%",
@@ -43,7 +44,7 @@ const styles = StyleSheet.create({
         alignSelf: "center"
     },
     newTaskSection: {
-        backgroundColor: Colors.BLUE,
+        backgroundColor: Colors.PURPLE,
         borderRadius: 50,
         width: 70,
         height: 70,
@@ -55,8 +56,11 @@ const styles = StyleSheet.create({
         borderWidth: 5,
     },
     newTaskImage: {
-        objectFit: "contain",
+        // objectFit: "contain",
         width: 17,
+        textAlign: "center",
+        fontSize: 35,
+        color: Colors.WHITE
     },
     viewTasksImage: {
         objectFit: "contain",

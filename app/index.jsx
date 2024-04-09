@@ -13,6 +13,10 @@ export default function App() {
     'outfit-medium': require('../assets/fonts/outfit/Outfit-Medium.ttf'),
     'outfit-semi-bold': require('../assets/fonts/outfit/Outfit-SemiBold.ttf'),
     'outfit-bold': require('../assets/fonts/outfit/Outfit-Bold.ttf'),
+    'poppins': require('../assets/fonts/poppins/Poppins-Regular.ttf'),
+    'poppins-medium': require('../assets/fonts/poppins/Poppins-Medium.ttf'),
+    'poppins-semi-bold': require('../assets/fonts/poppins/Poppins-SemiBold.ttf'),
+    'poppins-thin': require('../assets/fonts/poppins/Poppins-Thin.ttf'),
   });
 
   const onLayoutRootView = useCallback(async () => {

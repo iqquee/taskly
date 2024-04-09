@@ -5,81 +5,7 @@ import Colors from './Utils/Colors';
 export default function tasklist() {
     return (
         <View>
-            <ScrollView style={{ padding: 10 }} showsVerticalScrollIndicator={false}>
-                
-                {/* completed tasks div*/}
-                <View style={styles.ongoingSection}>
-                    <Text style={styles.ongoingText}>Completed Task(s)</Text>
-                </View>
-                {/* completed tasks ends*/}
-
-                {/* completed task list div*/}
-                <View>
-                    <View style={styles.taskSection}>
-                        <View style={styles.taskPrioritySection}>
-                            <Text style={styles.taskPriorityName}>High</Text>
-                            <View style={styles.taskPercentageSection}>
-                                <Text style={styles.taskPercentage}>82</Text>
-                                <Text style={styles.percentage}>%</Text>
-                            </View>
-                        </View>
-
-                        <Text style={styles.taskTitle}>Salon App Wireframe</Text>
-                        <View style={styles.taskTimeSection}>
-                            <Image style={styles.taskClockImage} source={require("../assets/images/time1.png")} />
-                            <Text style={styles.taskClockTime}>10:45 AM</Text>
-                        </View>
-
-                        <View style={styles.taskDateSection}>
-                            <Image style={styles.taskCalander} source={require("../assets/images/calender.png")} />
-                            <Text style={styles.taskDueDate}>Monday, April 8</Text>
-                        </View>
-                    </View>
-
-                    <View style={styles.taskSection}>
-                        <View style={styles.taskPrioritySection}>
-                            <Text style={styles.taskPriorityName}>Medium</Text>
-                            <View style={styles.taskPercentageSection}>
-                                <Text style={styles.taskPercentage}>82</Text>
-                                <Text style={styles.percentage}>%</Text>
-                            </View>
-                        </View>
-
-                        <Text style={styles.taskTitle}>Build a task management app</Text>
-                        <View style={styles.taskTimeSection}>
-                            <Image style={styles.taskClockImage} source={require("../assets/images/time1.png")} />
-                            <Text style={styles.taskClockTime}>10:45 AM</Text>
-                        </View>
-
-                        <View style={styles.taskDateSection}>
-                            <Image style={styles.taskCalander} source={require("../assets/images/calender.png")} />
-                            <Text style={styles.taskDueDate}>Monday, April 8</Text>
-                        </View>
-                    </View>
-
-                    <View style={styles.taskSection}>
-                        <View style={styles.taskPrioritySection}>
-                            <Text style={styles.taskPriorityName}>Medium</Text>
-                            <View style={styles.taskPercentageSection}>
-                                <Text style={styles.taskPercentage}>82</Text>
-                                <Text style={styles.percentage}>%</Text>
-                            </View>
-                        </View>
-
-                        <Text style={styles.taskTitle}>Graphics design for client</Text>
-                        <View style={styles.taskTimeSection}>
-                            <Image style={styles.taskClockImage} source={require("../assets/images/time1.png")} />
-                            <Text style={styles.taskClockTime}>10:45 AM</Text>
-                        </View>
-
-                        <View style={styles.taskDateSection}>
-                            <Image style={styles.taskCalander} source={require("../assets/images/calender.png")} />
-                            <Text style={styles.taskDueDate}>Monday, April 8</Text>
-                        </View>
-                    </View>
-                </View>
-                {/* completed task list ends*/}
-                
+            <ScrollView style={{ paddingHorizontal: 10 }} showsVerticalScrollIndicator={false}>
                 {/* ongoing div*/}
                 <View style={styles.ongoingSection}>
                     <Text style={styles.ongoingText}>Ongoing Task(s)</Text>
@@ -130,7 +56,7 @@ export default function tasklist() {
                         </View>
                     </View>
 
-                    <View style={styles.taskSection}>
+                    <View style={[styles.taskSection, styles.ongoingExp]}>
                         <View style={styles.taskPrioritySection}>
                             <Text style={styles.taskPriorityName}>Medium</Text>
                             <View style={styles.taskPercentageSection}>
@@ -151,15 +77,96 @@ export default function tasklist() {
                         </View>
                     </View>
                 </View>
+                {/* ongoing task list ends*/}
+
+
+                {/* completed tasks div*/}
+                <View style={styles.ongoingSection}>
+                    <Text style={styles.ongoingText}>Completed Task(s)</Text>
+                </View>
+                {/* completed tasks ends*/}
+
+                {/* completed task list div*/}
+                <View>
+                    <View style={styles.completedTaskSection}>
+                        <View style={styles.taskPrioritySection}>
+                            <Text style={styles.taskPriorityName}>High</Text>
+                            <View style={styles.taskPercentageSection}>
+                                <Text style={styles.taskPercentage}>82</Text>
+                                <Text style={styles.percentage}>%</Text>
+                            </View>
+                        </View>
+
+                        <Text style={styles.taskTitle}>Salon App Wireframe</Text>
+                        <View style={styles.taskTimeSection}>
+                            <Image style={styles.taskClockImage} source={require("../assets/images/time1.png")} />
+                            <Text style={styles.taskClockTime}>10:45 AM</Text>
+                        </View>
+
+                        <View style={styles.taskDateSection}>
+                            <Image style={styles.taskCalander} source={require("../assets/images/calender.png")} />
+                            <Text style={styles.taskDueDate}>Monday, April 8</Text>
+                        </View>
+                    </View>
+
+                    <View style={styles.completedTaskSection}>
+                        <View style={styles.taskPrioritySection}>
+                            <Text style={styles.taskPriorityName}>Medium</Text>
+                            <View style={styles.taskPercentageSection}>
+                                <Text style={styles.taskPercentage}>82</Text>
+                                <Text style={styles.percentage}>%</Text>
+                            </View>
+                        </View>
+
+                        <Text style={styles.taskTitle}>Build a task management app</Text>
+                        <View style={styles.taskTimeSection}>
+                            <Image style={styles.taskClockImage} source={require("../assets/images/time1.png")} />
+                            <Text style={styles.taskClockTime}>10:45 AM</Text>
+                        </View>
+
+                        <View style={styles.taskDateSection}>
+                            <Image style={styles.taskCalander} source={require("../assets/images/calender.png")} />
+                            <Text style={styles.taskDueDate}>Monday, April 8</Text>
+                        </View>
+                    </View>
+
+                    <View style={styles.completedTaskSection}>
+                        <View style={styles.taskPrioritySection}>
+                            <Text style={styles.taskPriorityName}>Medium</Text>
+                            <View style={styles.taskPercentageSection}>
+                                <Text style={styles.taskPercentage}>82</Text>
+                                <Text style={styles.percentage}>%</Text>
+                            </View>
+                        </View>
+
+                        <Text style={styles.taskTitle}>Graphics design for client</Text>
+                        <View style={styles.taskTimeSection}>
+                            <Image style={styles.taskClockImage} source={require("../assets/images/time1.png")} />
+                            <Text style={styles.taskClockTime}>10:45 AM</Text>
+                        </View>
+
+                        <View style={styles.taskDateSection}>
+                            <Image style={styles.taskCalander} source={require("../assets/images/calender.png")} />
+                            <Text style={styles.taskDueDate}>Monday, April 8</Text>
+                        </View>
+                    </View>
+                </View>
+                {/* completed task list ends*/}
 
                 <View style={{ marginVertical: 15 }}></View>
-                {/* ongoing task list ends*/}
             </ScrollView>
         </View>
     )
 }
 
 const styles = StyleSheet.create({
+    completedTaskSection: {
+        backgroundColor: Colors.PURPLE,
+        width: "100%",
+        padding: 15,
+        borderRadius: 20,
+        marginBottom: 10,
+    },
     ongoingSection: {
         marginVertical: 10,
     },
@@ -169,11 +176,14 @@ const styles = StyleSheet.create({
         fontFamily: "outfit-medium",
     },
     taskSection: {
-        backgroundColor: Colors.BLACKISH,
+        backgroundColor: "green",
         width: "100%",
         padding: 15,
         borderRadius: 20,
-        marginBottom: 10
+        marginBottom: 10,
+    },
+    ongoingExp: {
+        backgroundColor: Colors.YELLOW,
     },
     taskPrioritySection: {
         display: "flex",
@@ -181,10 +191,10 @@ const styles = StyleSheet.create({
         justifyContent: "space-between"
     },
     taskPriorityName: {
-        color: Colors.WHITE,
+        color: Colors.BLACKISH,
         fontFamily: "outfit",
         alignSelf: "center",
-        backgroundColor: Colors.BLUE,
+        backgroundColor: Colors.WHITE,
         padding: 5,
         borderRadius: 10,
     },
@@ -205,7 +215,7 @@ const styles = StyleSheet.create({
     },
     taskTitle: {
         color: Colors.WHITE,
-        fontFamily: "outfit-medium",
+        fontFamily: "poppins-medium",
         fontSize: 20,
         marginTop: 5
     },
