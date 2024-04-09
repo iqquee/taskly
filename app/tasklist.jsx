@@ -17,7 +17,7 @@ export default function tasklist() {
                 <View>
                     <View style={styles.taskSection}>
                         <View style={styles.taskPrioritySection}>
-                            <Text style={styles.taskPriorityName}>Medium</Text>
+                            <Text style={styles.taskPriorityName}>High</Text>
                             <View style={styles.taskPercentageSection}>
                                 <Text style={styles.taskPercentage}>82</Text>
                                 <Text style={styles.percentage}>%</Text>
@@ -152,7 +152,7 @@ export default function tasklist() {
                     </View>
                 </View>
 
-                <View style={{ marginVertical: 40 }}></View>
+                <View style={{ marginVertical: 15 }}></View>
                 {/* ongoing task list ends*/}
             </ScrollView>
         </View>
