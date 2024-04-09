@@ -51,7 +51,6 @@ export default function HomeScreen() {
                     <TouchableOpacity style={{ alignSelf: "center" }}>
                         <Link href="/createtask" style={styles.viewAllText}>View all</Link>
                     </TouchableOpacity>
-
                 </View>
                 {/* ongoing ends*/}
 

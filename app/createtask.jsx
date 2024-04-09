@@ -37,9 +37,27 @@ export default function CreateTask() {
                 </View>
 
                 <View>
+                    <Text style={styles.subTaskName}>Sub Task(s)</Text>
+                    <KeyboardAvoidingView
+                        behavior={Platform.OS === "ios" ? "padding" : "height"}
+                        style={styles.writeTaskWrapper} >
+                        <TextInput style={styles.input} placeholder={"Input your sub task"} placeholderTextColor="grey" />
+                    </KeyboardAvoidingView>
+                    <KeyboardAvoidingView
+                        behavior={Platform.OS === "ios" ? "padding" : "height"}
+                        style={styles.writeTaskWrapper} >
+                        <TextInput style={styles.input} placeholder={"Input your sub task"} placeholderTextColor="grey" />
+                    </KeyboardAvoidingView>
+
+                    <TouchableOpacity>
+                        <Text style={styles.addSubTask}>Add Sub Task</Text>
+                    </TouchableOpacity>
+                </View>
+
+                <View>
                     <Text style={[styles.selectTimeTitle, styles.taskName]}>Select Time and Date</Text>
                     <View style={styles.dateTime}>
-                        <Text style={styles.dateTimeValue}>2024-04-03  10:59AM</Text>
+                        <Text style={styles.dateTimeValue}>{dateTimeValue ? dateTimeValue.toTimeString : "2025-09-06 12:15 AM"}</Text>
                         <TouchableOpacity activeOpacity={1} onPress={showDatePicker}>
                             <Image style={styles.calenderImage} source={require("../assets/images/calender.png")} />
                         </TouchableOpacity>
@@ -87,7 +105,7 @@ const styles = StyleSheet.create({
         color: Colors.BLACKISH
     },
     input: {
-        marginTop: 5,
+        marginTop: 10,
         borderBottomColor: Colors.BLACKISH,
         borderWidth: 1,
         borderRadius: 10,
@@ -95,6 +113,17 @@ const styles = StyleSheet.create({
         width: "100%",
         color: Colors.BLACKISH,
         fontSize: 15,
+    },
+    subTaskName: {
+        fontFamily: "outfit",
+        fontSize: 20,
+        color: Colors.BLACKISH,
+        marginTop: 10,
+    },
+    addSubTask: {
+        marginTop: 10,
+        fontFamily: "outfit",
+        color: Colors.BLUE,
     },
     selectTimeTitle: {
         marginTop: 10,
