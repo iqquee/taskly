@@ -1,4 +1,4 @@
-import { View, Text, ScrollView, StyleSheet } from 'react-native'
+import { View, Text, ScrollView, StyleSheet, Image } from 'react-native'
 import React from 'react'
 import Colors from './Utils/Colors';
 
@@ -6,16 +6,87 @@ export default function tasklist() {
     return (
         <View>
             <ScrollView style={{ padding: 10 }} showsVerticalScrollIndicator={false}>
+                
+                {/* completed tasks div*/}
+                <View style={styles.ongoingSection}>
+                    <Text style={styles.ongoingText}>Completed Task(s)</Text>
+                </View>
+                {/* completed tasks ends*/}
+
+                {/* completed task list div*/}
+                <View>
+                    <View style={styles.taskSection}>
+                        <View style={styles.taskPrioritySection}>
+                            <Text style={styles.taskPriorityName}>Medium</Text>
+                            <View style={styles.taskPercentageSection}>
+                                <Text style={styles.taskPercentage}>82</Text>
+                                <Text style={styles.percentage}>%</Text>
+                            </View>
+                        </View>
+
+                        <Text style={styles.taskTitle}>Salon App Wireframe</Text>
+                        <View style={styles.taskTimeSection}>
+                            <Image style={styles.taskClockImage} source={require("../assets/images/time1.png")} />
+                            <Text style={styles.taskClockTime}>10:45 AM</Text>
+                        </View>
+
+                        <View style={styles.taskDateSection}>
+                            <Image style={styles.taskCalander} source={require("../assets/images/calender.png")} />
+                            <Text style={styles.taskDueDate}>Monday, April 8</Text>
+                        </View>
+                    </View>
+
+                    <View style={styles.taskSection}>
+                        <View style={styles.taskPrioritySection}>
+                            <Text style={styles.taskPriorityName}>Medium</Text>
+                            <View style={styles.taskPercentageSection}>
+                                <Text style={styles.taskPercentage}>82</Text>
+                                <Text style={styles.percentage}>%</Text>
+                            </View>
+                        </View>
+
+                        <Text style={styles.taskTitle}>Build a task management app</Text>
+                        <View style={styles.taskTimeSection}>
+                            <Image style={styles.taskClockImage} source={require("../assets/images/time1.png")} />
+                            <Text style={styles.taskClockTime}>10:45 AM</Text>
+                        </View>
+
+                        <View style={styles.taskDateSection}>
+                            <Image style={styles.taskCalander} source={require("../assets/images/calender.png")} />
+                            <Text style={styles.taskDueDate}>Monday, April 8</Text>
+                        </View>
+                    </View>
+
+                    <View style={styles.taskSection}>
+                        <View style={styles.taskPrioritySection}>
+                            <Text style={styles.taskPriorityName}>Medium</Text>
+                            <View style={styles.taskPercentageSection}>
+                                <Text style={styles.taskPercentage}>82</Text>
+                                <Text style={styles.percentage}>%</Text>
+                            </View>
+                        </View>
+
+                        <Text style={styles.taskTitle}>Graphics design for client</Text>
+                        <View style={styles.taskTimeSection}>
+                            <Image style={styles.taskClockImage} source={require("../assets/images/time1.png")} />
+                            <Text style={styles.taskClockTime}>10:45 AM</Text>
+                        </View>
+
+                        <View style={styles.taskDateSection}>
+                            <Image style={styles.taskCalander} source={require("../assets/images/calender.png")} />
+                            <Text style={styles.taskDueDate}>Monday, April 8</Text>
+                        </View>
+                    </View>
+                </View>
+                {/* completed task list ends*/}
+                
                 {/* ongoing div*/}
                 <View style={styles.ongoingSection}>
-                    <Text style={styles.ongoingText}>Ongoing</Text>
-                    <TouchableOpacity style={{ alignSelf: "center" }}>
-                        <Link href="/createtask" style={styles.viewAllText}>View all</Link>
-                    </TouchableOpacity>
+                    <Text style={styles.ongoingText}>Ongoing Task(s)</Text>
                 </View>
                 {/* ongoing ends*/}
 
-                {/* task list div*/}
+                {/* ongoing task list div*/}
                 <View>
                     <View style={styles.taskSection}>
                         <View style={styles.taskPrioritySection}>
@@ -82,7 +153,7 @@ export default function tasklist() {
                 </View>
 
                 <View style={{ marginVertical: 40 }}></View>
-                {/* task list ends*/}
+                {/* ongoing task list ends*/}
             </ScrollView>
         </View>
     )
@@ -91,19 +162,11 @@ export default function tasklist() {
 const styles = StyleSheet.create({
     ongoingSection: {
         marginVertical: 10,
-        display: "flex",
-        flexDirection: "row",
-        justifyContent: "space-between"
     },
     ongoingText: {
         fontSize: 27,
         color: Colors.BLACKISH,
         fontFamily: "outfit-medium",
-    },
-    viewAllText: {
-        color: Colors.PURPLE,
-        fontSize: 18,
-        fontFamily: "outfit",
     },
     taskSection: {
         backgroundColor: Colors.BLACKISH,
