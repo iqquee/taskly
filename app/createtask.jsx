@@ -5,7 +5,7 @@ import React, { useState } from "react";
 
 export default function CreateTask() {
     const [isDateTimePickerVisible, setDateTimePickerVisibility] = useState(false);
-    const [dateTimeValue, setDateTimeValue] = useState(new Date(1598051730000))
+    const [dateTimeValue, setDateTimeValue] = useState(new Date())
     const { height, width } = useWindowDimensions();
 
     const showDatePicker = () => {
@@ -49,7 +49,7 @@ export default function CreateTask() {
                         <TextInput style={styles.input} placeholder={"Input your sub task"} placeholderTextColor="grey" />
                     </KeyboardAvoidingView>
 
-                    <TouchableOpacity>
+                    <TouchableOpacity style={{width: "25%"}}>
                         <Text style={styles.addSubTask}>Add Sub Task</Text>
                     </TouchableOpacity>
                 </View>

@@ -48,8 +48,8 @@ export default function HomeScreen() {
                 {/* ongoing div*/}
                 <View style={styles.ongoingSection}>
                     <Text style={styles.ongoingText}>Ongoing</Text>
-                    <TouchableOpacity style={{ alignSelf: "center" }}>
-                        <Link href="/createtask" style={styles.viewAllText}>View all</Link>
+                    <TouchableOpacity  style={{ alignSelf: "center" }}>
+                        <Link href="createtask" style={styles.viewAllText}>View all</Link>
                     </TouchableOpacity>
                 </View>
                 {/* ongoing ends*/}
@@ -257,11 +257,13 @@ const styles = StyleSheet.create({
         fontFamily: "outfit",
     },
     taskSection: {
-        backgroundColor: Colors.BLACKISH,
+        backgroundColor: Colors.WHITE,
         width: "100%",
         padding: 15,
         borderRadius: 20,
-        marginBottom: 10
+        marginBottom: 10,
+        borderColor: Colors.PURPLE,
+        borderWidth: 2
     },
     taskPrioritySection: {
         display: "flex",
@@ -272,7 +274,7 @@ const styles = StyleSheet.create({
         color: Colors.WHITE,
         fontFamily: "outfit",
         alignSelf: "center",
-        backgroundColor: Colors.BLUE,
+        backgroundColor: "green",
         padding: 5,
         borderRadius: 10,
     },
@@ -281,19 +283,19 @@ const styles = StyleSheet.create({
         flexDirection: "row"
     },
     taskPercentage: {
-        color: Colors.WHITE,
-        fontFamily: "outfit",
+        color: Colors.BLACKISH,
+        fontFamily: "poppins-medium",
         alignSelf: "center",
         fontSize: 18
     },
     percentage: {
-        color: Colors.WHITE,
-        fontFamily: "outfit-bold",
+        fontFamily: "poppins-semi-bold",
         fontSize: 25,
+        color: Colors.BLACKISH
     },
     taskTitle: {
-        color: Colors.WHITE,
-        fontFamily: "outfit-medium",
+        color: Colors.BLACKISH,
+        fontFamily: "poppins-medium",
         fontSize: 20,
         marginTop: 5
     },
@@ -309,7 +311,7 @@ const styles = StyleSheet.create({
         alignSelf: "center"
     },
     taskClockTime: {
-        color: Colors.WHITE,
+        color: Colors.BLACKISH,
         marginLeft: 3,
         fontSize: 15,
         fontFamily: "outfit",
@@ -327,7 +329,7 @@ const styles = StyleSheet.create({
         alignSelf: "center"
     },
     taskDueDate: {
-        color: Colors.WHITE,
+        color: Colors.BLACKISH,
         marginLeft: 3,
         fontSize: 15,
         fontFamily: "outfit",
