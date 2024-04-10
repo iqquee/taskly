@@ -1,4 +1,4 @@
-import { View, StyleSheet, Text, TouchableOpacity } from 'react-native'
+import { View, StyleSheet, Text, TouchableOpacity, Pressable } from 'react-native'
 import React from 'react'
 import Colors from '../Utils/Colors'
 import { Link } from 'expo-router';
@@ -10,11 +10,13 @@ export default function NavigationBar() {
             <TouchableOpacity activeOpacity={1} style={{ justifyContent: "center" }}>
                 {/* <Image style={styles.homeImage} source={require("../../assets/images/blue-home-circle.png")} /> */}
             </TouchableOpacity>
-            <TouchableOpacity activeOpacity={1} style={{ justifyContent: "center" }} >
-                <View style={styles.newTaskSection}>
-                    <Text style={styles.newTaskImage}>+</Text>
-                </View>
-            </TouchableOpacity>
+            <Link href="createtask" asChild>
+                <TouchableOpacity activeOpacity={1} style={{ justifyContent: "center" }}>
+                    <View style={styles.newTaskSection}>
+                        <Text style={styles.newTaskImage}>+</Text>
+                    </View>
+                </TouchableOpacity>
+            </Link>
             <TouchableOpacity activeOpacity={1} style={{ justifyContent: "center" }}>
                 {/* <Image style={styles.viewTasksImage} source={require("../../assets/images/blue-task-list.png")} /> */}
             </TouchableOpacity>
