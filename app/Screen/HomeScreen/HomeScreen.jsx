@@ -66,7 +66,7 @@ export default function HomeScreen() {
                         </View>
 
                         <Text style={styles.taskTitle}>Salon App Wireframe</Text>
-                        <View style={{display:"flex", flexDirection: "row", justifyContent: "space-between"}}>
+                        <View style={{ display: "flex", flexDirection: "row", justifyContent: "space-between" }}>
                             <View>
                                 <View style={styles.taskTimeSection}>
                                     <Image style={styles.taskClockImage} source={require("../../../assets/images/time1.png")} />
@@ -80,8 +80,10 @@ export default function HomeScreen() {
                             </View>
 
                             {/* dropdown icon */}
-                            <View style={{alignSelf: "center"}}>
-                                <Image style={styles.taskCalander} source={require("../../../assets/images/dropdown.png")} />
+                            <View style={{ alignSelf: "center" }}>
+                                <TouchableOpacity>
+                                    <Image style={styles.taskCalander} source={require("../../../assets/images/dropdown.png")} />
+                                </TouchableOpacity>
                             </View>
                         </View>
 
@@ -97,7 +99,7 @@ export default function HomeScreen() {
                         </View>
 
                         <Text style={styles.taskTitle}>Build a task management app</Text>
-                        <View style={{display:"flex", flexDirection: "row", justifyContent: "space-between"}}>
+                        <View style={{ display: "flex", flexDirection: "row", justifyContent: "space-between" }}>
                             <View>
                                 <View style={styles.taskTimeSection}>
                                     <Image style={styles.taskClockImage} source={require("../../../assets/images/time1.png")} />
@@ -111,8 +113,10 @@ export default function HomeScreen() {
                             </View>
 
                             {/* dropdown icon */}
-                            <View style={{alignSelf: "center"}}>
-                                <Image style={styles.taskCalander} source={require("../../../assets/images/dropdown.png")} />
+                            <View style={{ alignSelf: "center" }}>
+                                <TouchableOpacity>
+                                    <Image style={styles.taskCalander} source={require("../../../assets/images/dropdown.png")} />
+                                </TouchableOpacity>
                             </View>
                         </View>
                     </View>
@@ -127,7 +131,7 @@ export default function HomeScreen() {
                         </View>
 
                         <Text style={styles.taskTitle}>Graphics design for client</Text>
-                        <View style={{display:"flex", flexDirection: "row", justifyContent: "space-between"}}>
+                        <View style={{ display: "flex", flexDirection: "row", justifyContent: "space-between" }}>
                             <View>
                                 <View style={styles.taskTimeSection}>
                                     <Image style={styles.taskClockImage} source={require("../../../assets/images/time1.png")} />
@@ -141,8 +145,10 @@ export default function HomeScreen() {
                             </View>
 
                             {/* dropdown icon */}
-                            <View style={{alignSelf: "center"}}>
-                                <Image style={styles.taskCalander} source={require("../../../assets/images/dropdown.png")} />
+                            <View style={{ alignSelf: "center" }}>
+                                <TouchableOpacity>
+                                    <Image style={styles.taskCalander} source={require("../../../assets/images/dropdown.png")} />
+                                </TouchableOpacity>
                             </View>
                         </View>
                     </View>
