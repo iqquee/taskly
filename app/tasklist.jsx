@@ -1,4 +1,4 @@
-import { View, Text, ScrollView, StyleSheet, Image } from 'react-native'
+import { View, Text, ScrollView, StyleSheet, Image, TouchableOpacity } from 'react-native'
 import React from 'react'
 import Colors from './Utils/Colors';
 import { StatusBar } from 'expo-status-bar';
@@ -26,7 +26,7 @@ export default function tasklist() {
                         </View>
 
                         <Text style={styles.taskTitle}>Salon App Wireframe</Text>
-                        <View style={{display:"flex", flexDirection: "row", justifyContent: "space-between"}}>
+                        <View style={{ display: "flex", flexDirection: "row", justifyContent: "space-between" }}>
                             <View>
                                 <View style={styles.taskTimeSection}>
                                     <Image style={styles.taskClockImage} source={require("../assets/images/time1.png")} />
@@ -40,8 +40,10 @@ export default function tasklist() {
                             </View>
 
                             {/* dropdown icon */}
-                            <View style={{alignSelf: "center"}}>
-                                <Image style={styles.taskCalander} source={require("../assets/images/dropdown.png")} />
+                            <View style={{ alignSelf: "center" }}>
+                                <TouchableOpacity>
+                                    <Image style={styles.taskCalander} source={require("../assets/images/dropdown.png")} />
+                                </TouchableOpacity>
                             </View>
                         </View>
                     </View>
@@ -56,7 +58,7 @@ export default function tasklist() {
                         </View>
 
                         <Text style={styles.taskTitle}>Build a task management app</Text>
-                        <View style={{display:"flex", flexDirection: "row", justifyContent: "space-between"}}>
+                        <View style={{ display: "flex", flexDirection: "row", justifyContent: "space-between" }}>
                             <View>
                                 <View style={styles.taskTimeSection}>
                                     <Image style={styles.taskClockImage} source={require("../assets/images/time1.png")} />
@@ -70,8 +72,10 @@ export default function tasklist() {
                             </View>
 
                             {/* dropdown icon */}
-                            <View style={{alignSelf: "center"}}>
-                                <Image style={styles.taskCalander} source={require("../assets/images/dropdown.png")} />
+                            <View style={{ alignSelf: "center" }}>
+                                <TouchableOpacity>
+                                    <Image style={styles.taskCalander} source={require("../assets/images/dropdown.png")} />
+                                </TouchableOpacity>
                             </View>
                         </View>
                     </View>
@@ -86,7 +90,7 @@ export default function tasklist() {
                         </View>
 
                         <Text style={styles.taskTitle}>Graphics design for client</Text>
-                        <View style={{display:"flex", flexDirection: "row", justifyContent: "space-between"}}>
+                        <View style={{ display: "flex", flexDirection: "row", justifyContent: "space-between" }}>
                             <View>
                                 <View style={styles.taskTimeSection}>
                                     <Image style={styles.taskClockImage} source={require("../assets/images/time1.png")} />
@@ -100,8 +104,10 @@ export default function tasklist() {
                             </View>
 
                             {/* dropdown icon */}
-                            <View style={{alignSelf: "center"}}>
-                                <Image style={styles.taskCalander} source={require("../assets/images/dropdown.png")} />
+                            <View style={{ alignSelf: "center" }}>
+                                <TouchableOpacity>
+                                    <Image style={styles.taskCalander} source={require("../assets/images/dropdown.png")} />
+                                </TouchableOpacity>
                             </View>
                         </View>
                     </View>
@@ -127,7 +133,7 @@ export default function tasklist() {
                         </View>
 
                         <Text style={styles.taskTitle}>Salon App Wireframe</Text>
-                        <View style={{display:"flex", flexDirection: "row", justifyContent: "space-between"}}>
+                        <View style={{ display: "flex", flexDirection: "row", justifyContent: "space-between" }}>
                             <View>
                                 <View style={styles.taskTimeSection}>
                                     <Image style={styles.taskClockImage} source={require("../assets/images/time1.png")} />
@@ -141,8 +147,10 @@ export default function tasklist() {
                             </View>
 
                             {/* dropdown icon */}
-                            <View style={{alignSelf: "center"}}>
-                                <Image style={styles.taskCalander} source={require("../assets/images/dropdown.png")} />
+                            <View style={{ alignSelf: "center" }}>
+                                <TouchableOpacity>
+                                    <Image style={styles.taskCalander} source={require("../assets/images/dropdown.png")} />
+                                </TouchableOpacity>
                             </View>
                         </View>
                     </View>
@@ -157,7 +165,7 @@ export default function tasklist() {
                         </View>
 
                         <Text style={styles.taskTitle}>Build a task management app</Text>
-                        <View style={{display:"flex", flexDirection: "row", justifyContent: "space-between"}}>
+                        <View style={{ display: "flex", flexDirection: "row", justifyContent: "space-between" }}>
                             <View>
                                 <View style={styles.taskTimeSection}>
                                     <Image style={styles.taskClockImage} source={require("../assets/images/time1.png")} />
@@ -171,8 +179,10 @@ export default function tasklist() {
                             </View>
 
                             {/* dropdown icon */}
-                            <View style={{alignSelf: "center"}}>
-                                <Image style={styles.taskCalander} source={require("../assets/images/dropdown.png")} />
+                            <View style={{ alignSelf: "center" }}>
+                                <TouchableOpacity>
+                                    <Image style={styles.taskCalander} source={require("../assets/images/dropdown.png")} />
+                                </TouchableOpacity>
                             </View>
                         </View>
                     </View>
@@ -187,7 +197,7 @@ export default function tasklist() {
                         </View>
 
                         <Text style={styles.taskTitle}>Graphics design for client</Text>
-                        <View style={{display:"flex", flexDirection: "row", justifyContent: "space-between"}}>
+                        <View style={{ display: "flex", flexDirection: "row", justifyContent: "space-between" }}>
                             <View>
                                 <View style={styles.taskTimeSection}>
                                     <Image style={styles.taskClockImage} source={require("../assets/images/time1.png")} />
@@ -201,8 +211,10 @@ export default function tasklist() {
                             </View>
 
                             {/* dropdown icon */}
-                            <View style={{alignSelf: "center"}}>
-                                <Image style={styles.taskCalander} source={require("../assets/images/dropdown.png")} />
+                            <View style={{ alignSelf: "center" }}>
+                                <TouchableOpacity>
+                                    <Image style={styles.taskCalander} source={require("../assets/images/dropdown.png")} />
+                                </TouchableOpacity>
                             </View>
                         </View>
                     </View>

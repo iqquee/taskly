@@ -29,6 +29,8 @@ export default function CreateTask() {
         setThemeColor(color)
     };
 
+    
+
     return (
         <View style={{ padding: 10, height: height }}>
             <StatusBar style="dark" />
