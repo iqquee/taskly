@@ -142,7 +142,6 @@ export default function CreateTask() {
 
 const styles = StyleSheet.create({
     themeIdentifier: {
-        // width: Colors.PURPLE,
         height: 5,
         backgroundColor: Colors.PURPLE,
         marginBottom: 10,
@@ -163,7 +162,7 @@ const styles = StyleSheet.create({
     },
     input: {
         marginTop: 10,
-        borderBottomColor: Colors.BLACKISH,
+        borderColor: Colors.GRAY,
         borderWidth: 1,
         borderRadius: 10,
         padding: 10,
@@ -190,7 +189,7 @@ const styles = StyleSheet.create({
         flexDirection: "row",
         justifyContent: "space-between",
         marginTop: 5,
-        borderBottomColor: Colors.BLACKISH,
+        borderColor: Colors.GRAY,
         borderWidth: 1,
         borderRadius: 10,
         padding: 10,
