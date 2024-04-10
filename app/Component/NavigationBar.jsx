@@ -7,19 +7,13 @@ import { Link } from 'expo-router';
 export default function NavigationBar() {
     return (
         <View style={styles.wrapper}>
-            <TouchableOpacity activeOpacity={1} style={{ justifyContent: "center" }}>
-                {/* <Image style={styles.homeImage} source={require("../../assets/images/blue-home-circle.png")} /> */}
-            </TouchableOpacity>
             <Link href="createtask" asChild>
-                <TouchableOpacity activeOpacity={1} style={{ justifyContent: "center" }}>
+                <TouchableOpacity activeOpacity={1} style={{ alignSelf: "center" }}>
                     <View style={styles.newTaskSection}>
                         <Text style={styles.newTaskImage}>+</Text>
                     </View>
                 </TouchableOpacity>
             </Link>
-            <TouchableOpacity activeOpacity={1} style={{ justifyContent: "center" }}>
-                {/* <Image style={styles.viewTasksImage} source={require("../../assets/images/blue-task-list.png")} /> */}
-            </TouchableOpacity>
         </View>
     )
 }
@@ -38,11 +32,6 @@ const styles = StyleSheet.create({
         flexDirection: "row",
         justifyContent: "space-between",
         bottom: 0,
-    },
-    homeImage: {
-        objectFit: "contain",
-        width: 50,
-        alignSelf: "center"
     },
     newTaskSection: {
         backgroundColor: Colors.PURPLE,
@@ -63,9 +52,4 @@ const styles = StyleSheet.create({
         fontSize: 35,
         color: Colors.WHITE
     },
-    viewTasksImage: {
-        objectFit: "contain",
-        width: 40,
-        alignSelf: "center",
-    }
 })

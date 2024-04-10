@@ -6,8 +6,9 @@ import { StatusBar } from 'expo-status-bar';
 
 export default function CreateTask() {
     const [isDateTimePickerVisible, setDateTimePickerVisibility] = useState(false);
-    const [dateTimeValue, setDateTimeValue] = useState(new Date())
+    const [dateTimeValue, setDateTimeValue] = useState(new Date());
     const { height, width } = useWindowDimensions();
+    const [themeColor, setThemeColor] = useState(Colors.PURPLE);
 
     const showDatePicker = () => {
         setDateTimePickerVisibility(true);
@@ -19,15 +20,21 @@ export default function CreateTask() {
 
     const handleConfirm = (date) => {
         console.warn("A date has been picked: ", date);
-        setDateTimeValue(date)
+        setDateTimeValue(date);
         console.warn("selected date: ", dateTimeValue)
         hideDatePicker();
+    };
+
+    // handles setting theme color
+    const handleSetThemeColor = () => (color) => {
+        setThemeColor(color)
+        console.warn("Selected color: ", color)
     };
 
     return (
         <View style={{ padding: 10, height: height }}>
             <StatusBar style="dark" />
-            <View style={styles.themeIdentifier}></View>
+            <View style={{ backgroundColor: themeColor , height: 5, marginBottom: 10, borderRadius: 10, }}></View>
             <ScrollView showsVerticalScrollIndicator={false}>
                 <Text style={styles.header}>Create New Task</Text>
                 <View style={styles.wrapper}>
@@ -107,19 +114,19 @@ export default function CreateTask() {
                         <Text style={[styles.taskDescription, styles.taskName]}>Select Theme</Text>
                         <View style={styles.themeContainer}>
                             {/* purple theme */}
-                            <TouchableOpacity>
+                            <TouchableOpacity onPress={handleSetThemeColor(Colors.PURPLE)}>
                                 <View style={styles.purpleTheme}></View>
                             </TouchableOpacity>
                             {/* yellow theme */}
-                            <TouchableOpacity>
+                            <TouchableOpacity onPress={handleSetThemeColor(Colors.YELLOW)}>
                                 <View style={styles.yellowTheme}></View>
                             </TouchableOpacity>
                             {/* blue theme */}
-                            <TouchableOpacity>
+                            <TouchableOpacity onPress={handleSetThemeColor(Colors.BLUE)}>
                                 <View style={styles.blueTheme}></View>
                             </TouchableOpacity>
                             {/* green theme */}
-                            <TouchableOpacity>
+                            <TouchableOpacity onPress={handleSetThemeColor(Colors.GREEN)}>
                                 <View style={styles.greenTheme}></View>
                             </TouchableOpacity>
                         </View>
@@ -142,10 +149,7 @@ export default function CreateTask() {
 
 const styles = StyleSheet.create({
     themeIdentifier: {
-        height: 5,
-        backgroundColor: Colors.PURPLE,
-        marginBottom: 10,
-        borderRadius: 10,
+
     },
     header: {
         color: Colors.BLACKISH,
