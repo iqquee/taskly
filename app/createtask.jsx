@@ -9,6 +9,7 @@ export default function CreateTask() {
     const [dateTimeValue, setDateTimeValue] = useState(new Date());
     const { height, width } = useWindowDimensions();
     const [themeColor, setThemeColor] = useState(Colors.PURPLE);
+    const [highlightTextColor] =useState(Colors.BLUE)
 
     const showDatePicker = () => {
         setDateTimePickerVisibility(true);
@@ -40,7 +41,7 @@ export default function CreateTask() {
                         <KeyboardAvoidingView
                             behavior={Platform.OS === "ios" ? "padding" : "height"}
                             style={styles.writeTaskWrapper} >
-                            <TextInput style={styles.input} placeholder={"Input your task name"} placeholderTextColor="grey" />
+                            <TextInput style={styles.input} selectionColor={highlightTextColor} placeholder={"Input your task name"} placeholderTextColor="grey" />
                         </KeyboardAvoidingView>
                     </View>
 
@@ -49,27 +50,27 @@ export default function CreateTask() {
                         <KeyboardAvoidingView
                             behavior={Platform.OS === "ios" ? "padding" : "height"}
                             style={styles.writeTaskWrapper} >
-                            <TextInput style={styles.input} placeholder={"Input your sub task"} placeholderTextColor="grey" />
+                            <TextInput style={styles.input} selectionColor={highlightTextColor} placeholder={"Input your sub task"} placeholderTextColor="grey" />
                         </KeyboardAvoidingView>
                         <KeyboardAvoidingView
                             behavior={Platform.OS === "ios" ? "padding" : "height"}
                             style={styles.writeTaskWrapper} >
-                            <TextInput style={styles.input} placeholder={"Input your sub task"} placeholderTextColor="grey" />
+                            <TextInput style={styles.input} selectionColor={highlightTextColor} placeholder={"Input your sub task"} placeholderTextColor="grey" />
                         </KeyboardAvoidingView>
                         <KeyboardAvoidingView
                             behavior={Platform.OS === "ios" ? "padding" : "height"}
                             style={styles.writeTaskWrapper} >
-                            <TextInput style={styles.input} placeholder={"Input your sub task"} placeholderTextColor="grey" />
+                            <TextInput style={styles.input} selectionColor={highlightTextColor} placeholder={"Input your sub task"} placeholderTextColor="grey" />
                         </KeyboardAvoidingView>
                         <KeyboardAvoidingView
                             behavior={Platform.OS === "ios" ? "padding" : "height"}
                             style={styles.writeTaskWrapper} >
-                            <TextInput style={styles.input} placeholder={"Input your sub task"} placeholderTextColor="grey" />
+                            <TextInput style={styles.input} selectionColor={highlightTextColor} placeholder={"Input your sub task"} placeholderTextColor="grey" />
                         </KeyboardAvoidingView>
                         <KeyboardAvoidingView
                             behavior={Platform.OS === "ios" ? "padding" : "height"}
                             style={styles.writeTaskWrapper} >
-                            <TextInput style={styles.input} placeholder={"Input your sub task"} placeholderTextColor="grey" />
+                            <TextInput style={styles.input} selectionColor={highlightTextColor} placeholder={"Input your sub task"} placeholderTextColor="grey" />
                         </KeyboardAvoidingView>
 
                         <TouchableOpacity style={{ width: "25%" }}>
@@ -101,7 +102,7 @@ export default function CreateTask() {
                         {/* <KeyboardAvoidingView
                         behavior={Platform.OS === "ios" ? "padding" : "height"}
                         style={styles.writeTaskWrapper} > */}
-                        <TextInput multiline={true} numberOfLines={10} placeholder={"Input your task description..."}
+                        <TextInput multiline={true} selectionColor={highlightTextColor} numberOfLines={10} placeholder={"Input your task description..."}
                             placeholderTextColor="grey" style={[styles.input, styles.descriptionInput]} />
                         {/* </KeyboardAvoidingView> */}
                     </View>

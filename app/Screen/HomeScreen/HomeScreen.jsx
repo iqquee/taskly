@@ -48,7 +48,7 @@ export default function HomeScreen() {
                 {/* ongoing div*/}
                 <View style={styles.ongoingSection}>
                     <Text style={styles.ongoingText}>Ongoing</Text>
-                    <TouchableOpacity  style={{ alignSelf: "center" }}>
+                    <TouchableOpacity style={{ alignSelf: "center" }}>
                         <Link href="tasklist" style={styles.viewAllText}>View all</Link>
                     </TouchableOpacity>
                 </View>
@@ -66,15 +66,25 @@ export default function HomeScreen() {
                         </View>
 
                         <Text style={styles.taskTitle}>Salon App Wireframe</Text>
-                        <View style={styles.taskTimeSection}>
-                            <Image style={styles.taskClockImage} source={require("../../../assets/images/time1.png")} />
-                            <Text style={styles.taskClockTime}>10:45 AM</Text>
+                        <View style={{display:"flex", flexDirection: "row", justifyContent: "space-between"}}>
+                            <View>
+                                <View style={styles.taskTimeSection}>
+                                    <Image style={styles.taskClockImage} source={require("../../../assets/images/time1.png")} />
+                                    <Text style={styles.taskClockTime}>10:45 AM</Text>
+                                </View>
+
+                                <View style={styles.taskDateSection}>
+                                    <Image style={styles.taskCalander} source={require("../../../assets/images/calender.png")} />
+                                    <Text style={styles.taskDueDate}>Monday, April 8</Text>
+                                </View>
+                            </View>
+
+                            {/* dropdown icon */}
+                            <View style={{alignSelf: "center"}}>
+                                <Image style={styles.taskCalander} source={require("../../../assets/images/dropdown.png")} />
+                            </View>
                         </View>
 
-                        <View style={styles.taskDateSection}>
-                            <Image style={styles.taskCalander} source={require("../../../assets/images/calender.png")} />
-                            <Text style={styles.taskDueDate}>Monday, April 8</Text>
-                        </View>
                     </View>
 
                     <View style={styles.taskSection}>
@@ -87,14 +97,23 @@ export default function HomeScreen() {
                         </View>
 
                         <Text style={styles.taskTitle}>Build a task management app</Text>
-                        <View style={styles.taskTimeSection}>
-                            <Image style={styles.taskClockImage} source={require("../../../assets/images/time1.png")} />
-                            <Text style={styles.taskClockTime}>10:45 AM</Text>
-                        </View>
+                        <View style={{display:"flex", flexDirection: "row", justifyContent: "space-between"}}>
+                            <View>
+                                <View style={styles.taskTimeSection}>
+                                    <Image style={styles.taskClockImage} source={require("../../../assets/images/time1.png")} />
+                                    <Text style={styles.taskClockTime}>10:45 AM</Text>
+                                </View>
 
-                        <View style={styles.taskDateSection}>
-                            <Image style={styles.taskCalander} source={require("../../../assets/images/calender.png")} />
-                            <Text style={styles.taskDueDate}>Monday, April 8</Text>
+                                <View style={styles.taskDateSection}>
+                                    <Image style={styles.taskCalander} source={require("../../../assets/images/calender.png")} />
+                                    <Text style={styles.taskDueDate}>Monday, April 8</Text>
+                                </View>
+                            </View>
+
+                            {/* dropdown icon */}
+                            <View style={{alignSelf: "center"}}>
+                                <Image style={styles.taskCalander} source={require("../../../assets/images/dropdown.png")} />
+                            </View>
                         </View>
                     </View>
 
@@ -108,14 +127,23 @@ export default function HomeScreen() {
                         </View>
 
                         <Text style={styles.taskTitle}>Graphics design for client</Text>
-                        <View style={styles.taskTimeSection}>
-                            <Image style={styles.taskClockImage} source={require("../../../assets/images/time1.png")} />
-                            <Text style={styles.taskClockTime}>10:45 AM</Text>
-                        </View>
+                        <View style={{display:"flex", flexDirection: "row", justifyContent: "space-between"}}>
+                            <View>
+                                <View style={styles.taskTimeSection}>
+                                    <Image style={styles.taskClockImage} source={require("../../../assets/images/time1.png")} />
+                                    <Text style={styles.taskClockTime}>10:45 AM</Text>
+                                </View>
 
-                        <View style={styles.taskDateSection}>
-                            <Image style={styles.taskCalander} source={require("../../../assets/images/calender.png")} />
-                            <Text style={styles.taskDueDate}>Monday, April 8</Text>
+                                <View style={styles.taskDateSection}>
+                                    <Image style={styles.taskCalander} source={require("../../../assets/images/calender.png")} />
+                                    <Text style={styles.taskDueDate}>Monday, April 8</Text>
+                                </View>
+                            </View>
+
+                            {/* dropdown icon */}
+                            <View style={{alignSelf: "center"}}>
+                                <Image style={styles.taskCalander} source={require("../../../assets/images/dropdown.png")} />
+                            </View>
                         </View>
                     </View>
                 </View>
