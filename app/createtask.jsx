@@ -2,6 +2,7 @@ import { View, Text, StyleSheet, KeyboardAvoidingView, Platform, TextInput, Imag
 import Colors from './Utils/Colors';
 import DateTimePickerModal from "react-native-modal-datetime-picker";
 import React, { useState } from "react";
+import { StatusBar } from 'expo-status-bar';
 
 export default function CreateTask() {
     const [isDateTimePickerVisible, setDateTimePickerVisibility] = useState(false);
@@ -25,6 +26,7 @@ export default function CreateTask() {
 
     return (
         <View style={{ padding: 10, height: height }}>
+            <StatusBar style="dark" />
             <Text style={styles.header}>Create New Task</Text>
             <View style={styles.wrapper}>
                 <View>
