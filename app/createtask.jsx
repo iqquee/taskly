@@ -126,12 +126,16 @@ export default function CreateTask() {
                     </View>
                 </View>
 
-                 {/* divider */}
-                <View style={{ marginVertical: 80 }}></View>
+                {/* divider */}
+                <View style={{ marginVertical: 20 }}></View>
+
+                <TouchableOpacity style={styles.createTask} activeOpacity={0.7}>
+                    <Text style={styles.createTaskButton}>Create Task</Text>
+                </TouchableOpacity>
             </ScrollView>
-            <TouchableOpacity style={styles.createTask} activeOpacity={0.7}>
+            {/* <TouchableOpacity style={styles.createTask} activeOpacity={0.7}>
                 <Text style={styles.createTaskButton}>Create Task</Text>
-            </TouchableOpacity>
+            </TouchableOpacity> */}
         </View>
     )
 }
@@ -215,10 +219,11 @@ const styles = StyleSheet.create({
         backgroundColor: Colors.BLUE,
         borderRadius: 15,
         padding: 15,
-        position: "absolute",
-        bottom: 50,
+        // position: "absolute",
+        // bottom: 50,
         width: "100%",
-        marginLeft: 10,
+        // marginLeft: 10,
+        marginBottom: 10
     },
     createTaskButton: {
         color: Colors.WHITE,
