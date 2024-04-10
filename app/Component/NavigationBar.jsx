@@ -28,9 +28,7 @@ const styles = StyleSheet.create({
         paddingVertical: 30,
         paddingHorizontal: 20,
         position: "absolute",
-        display: "flex",
         flexDirection: "row",
-        justifyContent: "space-between",
         bottom: 0,
     },
     newTaskSection: {
