@@ -9,7 +9,7 @@ export default function CreateTask() {
     const [dateTimeValue, setDateTimeValue] = useState(new Date());
     const { height, width } = useWindowDimensions();
     const [themeColor, setThemeColor] = useState(Colors.PURPLE);
-    const [highlightTextColor] =useState(Colors.BLUE)
+    const [highlightTextColor] = useState(Colors.BLUE)
 
     const showDatePicker = () => {
         setDateTimePickerVisibility(true);
@@ -29,7 +29,6 @@ export default function CreateTask() {
         setThemeColor(color)
     };
 
-    
 
     return (
         <View style={{ padding: 10, height: height }}>
