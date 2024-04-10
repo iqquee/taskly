@@ -18,23 +18,20 @@ export default function CreateTask() {
         setDateTimePickerVisibility(false);
     };
 
-    const handleConfirm = (date) => {
-        console.warn("A date has been picked: ", date);
+    const handleSelectDateTime = (date) => {
         setDateTimeValue(date);
-        console.warn("selected date: ", dateTimeValue)
         hideDatePicker();
     };
 
     // handles setting theme color
-    const handleSetThemeColor = () => (color) => {
+    const handleSetThemeColor = (color) => {
         setThemeColor(color)
-        console.warn("Selected color: ", color)
     };
 
     return (
         <View style={{ padding: 10, height: height }}>
             <StatusBar style="dark" />
-            <View style={{ backgroundColor: themeColor , height: 5, marginBottom: 10, borderRadius: 10, }}></View>
+            <View style={{ backgroundColor: themeColor, height: 5, marginBottom: 10, borderRadius: 10, }}></View>
             <ScrollView showsVerticalScrollIndicator={false}>
                 <Text style={styles.header}>Create New Task</Text>
                 <View style={styles.wrapper}>
@@ -83,7 +80,7 @@ export default function CreateTask() {
                     <View>
                         <Text style={[styles.selectTimeTitle, styles.taskName]}>Select Time and Date</Text>
                         <View style={styles.dateTime}>
-                            <Text style={styles.dateTimeValue}>{dateTimeValue ? dateTimeValue.toTimeString : "2025-09-06 12:15 AM"}</Text>
+                            <Text style={styles.dateTimeValue}>{dateTimeValue ? dateTimeValue.getDate : "2025-09-06 12:15 AM"}</Text>
                             <TouchableOpacity activeOpacity={1} onPress={showDatePicker}>
                                 <Image style={styles.calenderImage} source={require("../assets/images/calender.png")} />
                             </TouchableOpacity>
@@ -92,7 +89,7 @@ export default function CreateTask() {
                         <DateTimePickerModal
                             isVisible={isDateTimePickerVisible}
                             mode="datetime"
-                            onConfirm={handleConfirm}
+                            onConfirm={handleSelectDateTime}
                             onCancel={hideDatePicker}
                             themeVariant="dark"
                         // positiveButton={{label: 'OK', textColor: 'green'}}
@@ -114,19 +111,19 @@ export default function CreateTask() {
                         <Text style={[styles.taskDescription, styles.taskName]}>Select Theme</Text>
                         <View style={styles.themeContainer}>
                             {/* purple theme */}
-                            <TouchableOpacity onPress={handleSetThemeColor(Colors.PURPLE)}>
+                            <TouchableOpacity onPress={() => handleSetThemeColor(Colors.PURPLE)}>
                                 <View style={styles.purpleTheme}></View>
                             </TouchableOpacity>
                             {/* yellow theme */}
-                            <TouchableOpacity onPress={handleSetThemeColor(Colors.YELLOW)}>
+                            <TouchableOpacity onPress={() => handleSetThemeColor(Colors.YELLOW)}>
                                 <View style={styles.yellowTheme}></View>
                             </TouchableOpacity>
                             {/* blue theme */}
-                            <TouchableOpacity onPress={handleSetThemeColor(Colors.BLUE)}>
+                            <TouchableOpacity onPress={() => handleSetThemeColor(Colors.BLUE)}>
                                 <View style={styles.blueTheme}></View>
                             </TouchableOpacity>
                             {/* green theme */}
-                            <TouchableOpacity onPress={handleSetThemeColor(Colors.GREEN)}>
+                            <TouchableOpacity onPress={() => handleSetThemeColor(Colors.GREEN)}>
                                 <View style={styles.greenTheme}></View>
                             </TouchableOpacity>
                         </View>
