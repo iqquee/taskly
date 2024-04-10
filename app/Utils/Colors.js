@@ -9,5 +9,6 @@ export default {
     BLUE: "#65ACFF",
     PINK: "#FB007F",
     BLACKISH: "#232b2b",
-    GREENISH:"#219ebc"
+    GREENISH:"#219ebc",
+    GRAYISH: "#232323"
 }

@@ -1,4 +1,4 @@
-import { View, StyleSheet, Image, Text, TouchableOpacity } from 'react-native'
+import { View, StyleSheet, Text, TouchableOpacity } from 'react-native'
 import React from 'react'
 import Colors from '../Utils/Colors'
 import { Link } from 'expo-router';
@@ -17,7 +17,6 @@ export default function NavigationBar() {
             </TouchableOpacity>
             <TouchableOpacity activeOpacity={1} style={{ justifyContent: "center" }}>
                 {/* <Image style={styles.viewTasksImage} source={require("../../assets/images/blue-task-list.png")} /> */}
-                <Text></Text>
             </TouchableOpacity>
         </View>
     )
