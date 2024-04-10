@@ -1,10 +1,12 @@
 import { View, Text, ScrollView, StyleSheet, Image } from 'react-native'
 import React from 'react'
 import Colors from './Utils/Colors';
+import { StatusBar } from 'expo-status-bar';
 
 export default function tasklist() {
     return (
         <View>
+            <StatusBar style="dark" />
             <ScrollView style={{ paddingHorizontal: 10 }} showsVerticalScrollIndicator={false}>
                 {/* ongoing div*/}
                 <View style={styles.ongoingSection}>
