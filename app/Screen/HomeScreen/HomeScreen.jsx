@@ -4,21 +4,21 @@ import Colors from '../../Utils/Colors';
 import NavigationBar from "../../Component/NavigationBar"
 import { Link } from 'expo-router'
 import mockTaskData from '../../Utils/mockData'
+
 export default function HomeScreen() {
     const [taskDropDownDisplay, setTaskDropDownDisplay] = useState("none")
-    const [markAsDone] = useState(true)
+    const [taskDropDownDisplayID, setTaskDropDownDisplayID] = useState(0)
 
-    const showTaskDropDown = () => {
+    const showTaskDropDown = (taskID) => {
         if (taskDropDownDisplay === "none") {
             setTaskDropDownDisplay("flex")
+            setTaskDropDownDisplayID(taskID)
         } else {
             setTaskDropDownDisplay("none")
+            setTaskDropDownDisplayID(0)
         }
     }
 
-    // for (let i = 0; i < mockTaskData.length; i++) { 
-    //     console.warn(mockTaskData[i].title)
-    // }
 
     return (
         <View>
@@ -83,21 +83,24 @@ export default function HomeScreen() {
 
                             <Text style={styles.taskTitle}>{taskList.title}</Text>
                             {/* sub tasks */}
-                            <View style={{ display: taskDropDownDisplay }}>
-                                {taskList.subTasks.map((subTask) => (
-                                    <View style={{ display: "flex", flexDirection: "row", marginBottom: 5 }}>
-                                        <TouchableOpacity>
-                                            {subTask.isDone
-                                                ? <Image style={[styles.taskClockImage, { width: 25, height: 25 }]} source={require("../../../assets/images/completed-task.png")} />
-                                                : <Image style={[styles.taskClockImage, { width: 25, height: 25 }]} source={require("../../../assets/images/pending-task.png")} />
-                                            }
-                                        </TouchableOpacity>
-                                        <Text style={{ alignSelf: "center", fontSize: 18, fontFamily: "outfit" }}>{subTask.title}</Text>
-                                    </View>
-                                ))}
-                                {/* divider */}
-                                <View style={{ marginBottom: 15 }}></View>
-                            </View>
+                            {taskDropDownDisplayID == taskList.id
+                                &&
+                                <View style={{ display: taskDropDownDisplay }}>
+                                    {taskList.subTasks.map((subTask) => (
+                                        <View style={{ display: "flex", flexDirection: "row", marginBottom: 5 }}>
+                                            <TouchableOpacity>
+                                                {subTask.isDone
+                                                    ? <Image style={[styles.taskClockImage, { width: 25, height: 25 }]} source={require("../../../assets/images/completed-task.png")} />
+                                                    : <Image style={[styles.taskClockImage, { width: 25, height: 25 }]} source={require("../../../assets/images/pending-task.png")} />
+                                                }
+                                            </TouchableOpacity>
+                                            <Text style={{ alignSelf: "center", fontSize: 18, fontFamily: "outfit" }}>{subTask.title}</Text>
+                                        </View>
+                                    ))}
+                                    {/* divider */}
+                                    <View style={{ marginBottom: 15 }}></View>
+                                </View>
+                            }
                             {/* sub tasks ends */}
 
                             <View style={{ display: "flex", flexDirection: "row", justifyContent: "space-between" }}>
@@ -115,7 +118,7 @@ export default function HomeScreen() {
 
                                 {/* dropdown icon */}
                                 <View style={{ alignSelf: "center" }}>
-                                    <TouchableOpacity onPress={() => showTaskDropDown()}>
+                                    <TouchableOpacity onPress={() => showTaskDropDown(taskList.id)}>
                                         <Image style={styles.taskCalander} source={require("../../../assets/images/dropdown.png")} />
                                     </TouchableOpacity>
                                 </View>
