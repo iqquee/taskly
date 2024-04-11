@@ -3,7 +3,7 @@ import React, { useState } from 'react'
 import Colors from '../../Utils/Colors';
 import NavigationBar from "../../Component/NavigationBar"
 import { Link } from 'expo-router'
-
+import mockTaskData from '../../Utils/mockData'
 export default function HomeScreen() {
     const [taskDropDownDisplay, setTaskDropDownDisplay] = useState("none")
     const [markAsDone] = useState(true)
@@ -15,6 +15,10 @@ export default function HomeScreen() {
             setTaskDropDownDisplay("none")
         }
     }
+
+    // for (let i = 0; i < mockTaskData.length; i++) { 
+    //     console.warn(mockTaskData[i].title)
+    // }
 
     return (
         <View>
@@ -67,214 +71,58 @@ export default function HomeScreen() {
 
                 {/* task list div*/}
                 <View>
-                    <View style={styles.taskSection}>
-                        <View style={styles.taskPrioritySection}>
-                            <Text style={styles.taskPriorityName}>Medium</Text>
-                            <View style={styles.taskPercentageSection}>
-                                <Text style={styles.taskPercentage}>82</Text>
-                                <Text style={styles.percentage}>%</Text>
-                            </View>
-                        </View>
-
-                        <Text style={styles.taskTitle}>Salon App Wireframe</Text>
-                        {/* sub tasks */}
-                        <View style={{ display: taskDropDownDisplay }}>
-                            <View style={{ display: "flex", flexDirection: "row", flexWrap: "wrap", marginBottom: 5 }}>
-                                <TouchableOpacity>
-                                    {markAsDone
-                                        ? <Image style={[styles.taskClockImage, { width: 25, height: 25 }]} source={require("../../../assets/images/completed-task.png")} />
-                                        : <Image style={[styles.taskClockImage, { width: 25, height: 25 }]} source={require("../../../assets/images/pending-task.png")} />
-                                    }
-                                </TouchableOpacity>
-                                <Text style={{ alignSelf: "center", fontSize: 18, fontFamily: "outfit" }}>Finish up the task from yesterday</Text>
-                            </View>
-
-                            <View style={{ display: "flex", flexDirection: "row", flexWrap: "wrap", marginBottom: 5 }}>
-                                <TouchableOpacity>
-                                    {false
-                                        ? <Image style={[styles.taskClockImage, { width: 25, height: 25 }]} source={require("../../../assets/images/completed-task.png")} />
-                                        : <Image style={[styles.taskClockImage, { width: 25, height: 25 }]} source={require("../../../assets/images/pending-task.png")} />
-                                    }
-                                </TouchableOpacity>
-                                <Text style={{ alignSelf: "center", fontSize: 18, fontFamily: "outfit" }}>Finish up the task from yesterday</Text>
-                            </View>
-
-                            <View style={{ display: "flex", flexDirection: "row", flexWrap: "wrap", marginBottom: 5 }}>
-                                <TouchableOpacity>
-                                    {markAsDone
-                                        ? <Image style={[styles.taskClockImage, { width: 25, height: 25 }]} source={require("../../../assets/images/completed-task.png")} />
-                                        : <Image style={[styles.taskClockImage, { width: 25, height: 25 }]} source={require("../../../assets/images/pending-task.png")} />
-                                    }
-                                </TouchableOpacity>
-                                <Text style={{ alignSelf: "center", fontSize: 18, fontFamily: "outfit" }}>Finish up the task from yesterday</Text>
-                            </View>
-
-                            {/* divider */}
-                            <View style={{ marginBottom: 15 }}></View>
-                        </View>
-                        {/* sub tasks ends */}
-                        <View style={{ display: "flex", flexDirection: "row", justifyContent: "space-between" }}>
-                            <View>
-                                <View style={styles.taskTimeSection}>
-                                    <Image style={styles.taskClockImage} source={require("../../../assets/images/time1.png")} />
-                                    <Text style={styles.taskClockTime}>10:45 AM</Text>
-                                </View>
-
-                                <View style={styles.taskDateSection}>
-                                    <Image style={styles.taskCalander} source={require("../../../assets/images/calender.png")} />
-                                    <Text style={styles.taskDueDate}>Monday, April 8</Text>
+                    {mockTaskData.map((taskList) => (
+                        <View style={styles.taskSection}>
+                            <View style={styles.taskPrioritySection}>
+                                <Text style={styles.taskPriorityName}>{taskList.priority}</Text>
+                                <View style={styles.taskPercentageSection}>
+                                    <Text style={styles.taskPercentage}>82</Text>
+                                    <Text style={styles.percentage}>%</Text>
                                 </View>
                             </View>
 
-                            {/* dropdown icon */}
-                            <View style={{ alignSelf: "center" }}>
-                                <TouchableOpacity onPress={() => showTaskDropDown()}>
-                                    <Image style={styles.taskCalander} source={require("../../../assets/images/dropdown.png")} />
-                                </TouchableOpacity>
+                            <Text style={styles.taskTitle}>{taskList.title}</Text>
+                            {/* sub tasks */}
+                            <View style={{ display: taskDropDownDisplay }}>
+                                {taskList.subTasks.map((subTask) => (
+                                    <View style={{ display: "flex", flexDirection: "row", marginBottom: 5 }}>
+                                        <TouchableOpacity>
+                                            {subTask.isDone
+                                                ? <Image style={[styles.taskClockImage, { width: 25, height: 25 }]} source={require("../../../assets/images/completed-task.png")} />
+                                                : <Image style={[styles.taskClockImage, { width: 25, height: 25 }]} source={require("../../../assets/images/pending-task.png")} />
+                                            }
+                                        </TouchableOpacity>
+                                        <Text style={{ alignSelf: "center", fontSize: 18, fontFamily: "outfit" }}>{subTask.title}</Text>
+                                    </View>
+                                ))}
+                                {/* divider */}
+                                <View style={{ marginBottom: 15 }}></View>
                             </View>
-                        </View>
+                            {/* sub tasks ends */}
 
-                    </View>
+                            <View style={{ display: "flex", flexDirection: "row", justifyContent: "space-between" }}>
+                                <View>
+                                    <View style={styles.taskTimeSection}>
+                                        <Image style={styles.taskClockImage} source={require("../../../assets/images/time1.png")} />
+                                        <Text style={styles.taskClockTime}>{taskList.time}</Text>
+                                    </View>
 
-                    <View style={styles.taskSection}>
-                        <View style={styles.taskPrioritySection}>
-                            <Text style={styles.taskPriorityName}>Medium</Text>
-                            <View style={styles.taskPercentageSection}>
-                                <Text style={styles.taskPercentage}>82</Text>
-                                <Text style={styles.percentage}>%</Text>
-                            </View>
-                        </View>
-
-                        <Text style={styles.taskTitle}>Build a task management app</Text>
-
-                        {/* sub tasks */}
-                        <View>
-                            <View style={{ display: "flex", flexDirection: "row", flexWrap: "wrap", marginBottom: 5 }}>
-                                <TouchableOpacity>
-                                    {markAsDone
-                                        ? <Image style={[styles.taskClockImage, { width: 25, height: 25 }]} source={require("../../../assets/images/completed-task.png")} />
-                                        : <Image style={[styles.taskClockImage, { width: 25, height: 25 }]} source={require("../../../assets/images/pending-task.png")} />
-                                    }
-                                </TouchableOpacity>
-                                <Text style={{ alignSelf: "center", fontSize: 18, fontFamily: "outfit" }}>Finish up the task from yesterday</Text>
-                            </View>
-
-                            <View style={{ display: "flex", flexDirection: "row", flexWrap: "wrap", marginBottom: 5 }}>
-                                <TouchableOpacity>
-                                    {markAsDone
-                                        ? <Image style={[styles.taskClockImage, { width: 25, height: 25 }]} source={require("../../../assets/images/completed-task.png")} />
-                                        : <Image style={[styles.taskClockImage, { width: 25, height: 25 }]} source={require("../../../assets/images/pending-task.png")} />
-                                    }
-                                </TouchableOpacity>
-                                <Text style={{ alignSelf: "center", fontSize: 18, fontFamily: "outfit" }}>Finish up the task from yesterday</Text>
-                            </View>
-
-                            <View style={{ display: "flex", flexDirection: "row", flexWrap: "wrap", marginBottom: 5 }}>
-                                <TouchableOpacity>
-                                    {markAsDone
-                                        ? <Image style={[styles.taskClockImage, { width: 25, height: 25 }]} source={require("../../../assets/images/completed-task.png")} />
-                                        : <Image style={[styles.taskClockImage, { width: 25, height: 25 }]} source={require("../../../assets/images/pending-task.png")} />
-                                    }
-                                </TouchableOpacity>
-                                <Text style={{ alignSelf: "center", fontSize: 18, fontFamily: "outfit" }}>Finish up the task from yesterday</Text>
-                            </View>
-
-                            {/* divider */}
-                            <View style={{ marginBottom: 15 }}></View>
-                        </View>
-                        {/* sub tasks ends */}
-
-                        <View style={{ display: "flex", flexDirection: "row", justifyContent: "space-between" }}>
-                            <View>
-                                <View style={styles.taskTimeSection}>
-                                    <Image style={styles.taskClockImage} source={require("../../../assets/images/time1.png")} />
-                                    <Text style={styles.taskClockTime}>10:45 AM</Text>
+                                    <View style={styles.taskDateSection}>
+                                        <Image style={styles.taskCalander} source={require("../../../assets/images/calender.png")} />
+                                        <Text style={styles.taskDueDate}>{taskList.date}</Text>
+                                    </View>
                                 </View>
 
-                                <View style={styles.taskDateSection}>
-                                    <Image style={styles.taskCalander} source={require("../../../assets/images/calender.png")} />
-                                    <Text style={styles.taskDueDate}>Monday, April 8</Text>
+                                {/* dropdown icon */}
+                                <View style={{ alignSelf: "center" }}>
+                                    <TouchableOpacity onPress={() => showTaskDropDown()}>
+                                        <Image style={styles.taskCalander} source={require("../../../assets/images/dropdown.png")} />
+                                    </TouchableOpacity>
                                 </View>
                             </View>
-
-                            {/* dropdown icon */}
-                            <View style={{ alignSelf: "center" }}>
-                                <TouchableOpacity>
-                                    <Image style={styles.taskCalander} source={require("../../../assets/images/dropdown.png")} />
-                                </TouchableOpacity>
-                            </View>
                         </View>
-                    </View>
+                    ))}
 
-                    <View style={styles.taskSection}>
-                        <View style={styles.taskPrioritySection}>
-                            <Text style={styles.taskPriorityName}>Medium</Text>
-                            <View style={styles.taskPercentageSection}>
-                                <Text style={styles.taskPercentage}>82</Text>
-                                <Text style={styles.percentage}>%</Text>
-                            </View>
-                        </View>
-
-                        <Text style={styles.taskTitle}>Graphics design for client</Text>
-
-                        {/* sub tasks */}
-                        <View>
-                            <View style={{ display: "flex", flexDirection: "row", flexWrap: "wrap", marginBottom: 5 }}>
-                                <TouchableOpacity>
-                                    {markAsDone
-                                        ? <Image style={[styles.taskClockImage, { width: 25, height: 25 }]} source={require("../../../assets/images/completed-task.png")} />
-                                        : <Image style={[styles.taskClockImage, { width: 25, height: 25 }]} source={require("../../../assets/images/pending-task.png")} />
-                                    }
-                                </TouchableOpacity>
-                                <Text style={{ alignSelf: "center", fontSize: 18, fontFamily: "outfit" }}>Finish up the task from yesterday</Text>
-                            </View>
-
-                            <View style={{ display: "flex", flexDirection: "row", flexWrap: "wrap", marginBottom: 5 }}>
-                                <TouchableOpacity>
-                                    {markAsDone
-                                        ? <Image style={[styles.taskClockImage, { width: 25, height: 25 }]} source={require("../../../assets/images/completed-task.png")} />
-                                        : <Image style={[styles.taskClockImage, { width: 25, height: 25 }]} source={require("../../../assets/images/pending-task.png")} />
-                                    }
-                                </TouchableOpacity>
-                                <Text style={{ alignSelf: "center", fontSize: 18, fontFamily: "outfit" }}>Finish up the task from yesterday</Text>
-                            </View>
-
-                            <View style={{ display: "flex", flexDirection: "row", flexWrap: "wrap", marginBottom: 5 }}>
-                                <TouchableOpacity>
-                                    {markAsDone
-                                        ? <Image style={[styles.taskClockImage, { width: 25, height: 25 }]} source={require("../../../assets/images/completed-task.png")} />
-                                        : <Image style={[styles.taskClockImage, { width: 25, height: 25 }]} source={require("../../../assets/images/pending-task.png")} />
-                                    }
-                                </TouchableOpacity>
-                                <Text style={{ alignSelf: "center", fontSize: 18, fontFamily: "outfit" }}>Finish up the task from yesterday</Text>
-                            </View>
-
-                            {/* divider */}
-                            <View style={{ marginBottom: 15 }}></View>
-                        </View>
-                        {/* sub tasks ends */}
-
-                        <View style={{ display: "flex", flexDirection: "row", justifyContent: "space-between" }}>
-                            <View>
-                                <View style={styles.taskTimeSection}>
-                                    <Image style={styles.taskClockImage} source={require("../../../assets/images/time1.png")} />
-                                    <Text style={styles.taskClockTime}>10:45 AM</Text>
-                                </View>
-
-                                <View style={styles.taskDateSection}>
-                                    <Image style={styles.taskCalander} source={require("../../../assets/images/calender.png")} />
-                                    <Text style={styles.taskDueDate}>Monday, April 8</Text>
-                                </View>
-                            </View>
-
-                            {/* dropdown icon */}
-                            <View style={{ alignSelf: "center" }}>
-                                <TouchableOpacity>
-                                    <Image style={styles.taskCalander} source={require("../../../assets/images/dropdown.png")} />
-                                </TouchableOpacity>
-                            </View>
-                        </View>
-                    </View>
                 </View>
 
                 <View style={{ marginVertical: 40 }}></View>
