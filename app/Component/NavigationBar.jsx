@@ -44,7 +44,6 @@ const styles = StyleSheet.create({
         borderWidth: 5,
     },
     newTaskImage: {
-        // objectFit: "contain",
         width: 17,
         textAlign: "center",
         fontSize: 35,
