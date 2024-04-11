@@ -19,7 +19,6 @@ export default function HomeScreen() {
         }
     }
 
-
     return (
         <View>
             <ScrollView style={{ padding: 10 }} showsVerticalScrollIndicator={false}>
@@ -76,7 +75,7 @@ export default function HomeScreen() {
                             <View style={styles.taskPrioritySection}>
                                 <Text style={styles.taskPriorityName}>{taskList.priority}</Text>
                                 <View style={styles.taskPercentageSection}>
-                                    <Text style={styles.taskPercentage}>82</Text>
+                                    <Text style={styles.taskPercentage}>{taskList.percentage}</Text>
                                     <Text style={styles.percentage}>%</Text>
                                 </View>
                             </View>

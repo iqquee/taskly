@@ -6,6 +6,7 @@ const mockTaskData = [
         time: "13:59 PM",
         date: "2024-09-24",
         priority: "low",
+        percentage: 50,
         subTasks: [
             {
                 isDone: true,
@@ -24,9 +25,10 @@ const mockTaskData = [
         time: "11:00 AM",
         date: "2024-06-01",
         priority: "meduim",
+        percentage: 100,
         subTasks: [
             {
-                isDone: false,
+                isDone: true,
                 title: "work on the langing page"
             },
             {
@@ -42,6 +44,7 @@ const mockTaskData = [
         time: "11:00 AM",
         date: "2024-04-12",
         priority: "high",
+        percentage: 0,
         subTasks: [
             {
                 isDone: false,
