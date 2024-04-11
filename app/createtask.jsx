@@ -32,7 +32,7 @@ export default function CreateTask() {
 
     return (
         <View style={{ padding: 10, height: height }}>
-            <StatusBar style="dark" />
+            <StatusBar style="auto" />
             <View style={{ backgroundColor: themeColor, height: 5, marginBottom: 10, borderRadius: 10, }}></View>
             <ScrollView showsVerticalScrollIndicator={false}>
                 <Text style={styles.header}>Create New Task</Text>
