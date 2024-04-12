@@ -31,7 +31,7 @@ export default function App() {
 
   return (
     <View onLayout={onLayoutRootView} style={{ flex: 1 }}>
-      <StatusBar style="dark" />
+      <StatusBar style="auto" />
       {/* <SafeAreaView> */}
       <HomeScreen />
       {/* </SafeAreaView> */}
