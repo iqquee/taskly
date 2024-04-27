@@ -26,6 +26,7 @@ export default function CreateTask() {
 
     // handles setting theme color
     const handleSetThemeColor = (color) => {
+        // set themes 
         setThemeColor(color)
     };
 
