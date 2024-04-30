@@ -17,7 +17,7 @@ export default function tasklist() {
 
     return (
         <View>
-            <StatusBar style="auto" />
+            <StatusBar style="dark" />
             <ScrollView style={{ paddingHorizontal: 10 }} showsVerticalScrollIndicator={false}>
                 {/* ongoing div*/}
                 <View style={styles.ongoingSection}>
