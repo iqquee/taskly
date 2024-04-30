@@ -4,6 +4,7 @@ import Colors from '../../Utils/Colors';
 import NavigationBar from "../../Component/NavigationBar"
 import { Link } from 'expo-router'
 import mockTaskData from '../../Utils/mockData'
+import { StatusBar } from 'expo-status-bar';
 
 export default function HomeScreen() {
     const [taskDropDownDisplay, setTaskDropDownDisplay] = useState("none")
@@ -21,6 +22,7 @@ export default function HomeScreen() {
 
     return (
         <View>
+            <StatusBar style="dark" />
             <ScrollView style={{ padding: 10 }} showsVerticalScrollIndicator={false}>
                 <Text style={styles.welcomeBack}>Welcome Back!!!</Text>
                 <Text style={styles.manageDailyTask}>Manage Your Daily Task</Text>
@@ -73,7 +75,18 @@ export default function HomeScreen() {
                     {mockTaskData.map((taskList) => (
                         <View style={styles.taskSection}>
                             <View style={styles.taskPrioritySection}>
-                                <Text style={styles.taskPriorityName}>{taskList.priority}</Text>
+                                {
+                                    taskList.priority === "low" &&
+                                    <Text style={[styles.taskPriorityName, {  backgroundColor: "green",}]}>{taskList.priority}</Text>  
+                                }
+                                {
+                                    taskList.priority === "meduim" &&
+                                    <Text style={[styles.taskPriorityName, {  backgroundColor: Colors.YELLOW,}]}>{taskList.priority}</Text>  
+                                }
+                                {
+                                    taskList.priority === "high" &&
+                                    <Text style={[styles.taskPriorityName, {  backgroundColor: "red",}]}>{taskList.priority}</Text>  
+                                }
                                 <View style={styles.taskPercentageSection}>
                                     <Text style={styles.taskPercentage}>{taskList.percentage}</Text>
                                     <Text style={styles.percentage}>%</Text>
@@ -281,7 +294,6 @@ const styles = StyleSheet.create({
         color: Colors.WHITE,
         fontFamily: "outfit",
         alignSelf: "center",
-        backgroundColor: "green",
         padding: 5,
         borderRadius: 10,
     },

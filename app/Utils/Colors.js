@@ -11,5 +11,6 @@ export default {
     BLACKISH: "#232b2b",
     GREENISH:"#219ebc",
     GRAYISH: "#232323",
-    GREEN: "green"
+    GREEN: "green",
+    RED: "red"
 }
